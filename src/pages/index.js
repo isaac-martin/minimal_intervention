@@ -8,9 +8,13 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <h1 className="logo">Minimal Intervention</h1>
-    <p>
-      We're harvesting something exciting, sign up below to receive a discount
-      and join the waitlist.
+    <p className="intro">
+      Hi, we’re Minimal Intervention. We source handcrafted products from across
+      the world for you to share with your friends.
+    </p>
+    <p className="news-intro">
+      Sign up below for exclusive deals, coupons and news for when we are open
+      for business.
     </p>
     <Newsletter />
   </Layout>

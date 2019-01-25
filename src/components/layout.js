@@ -4,14 +4,22 @@ import PropTypes from 'prop-types'
 import './layout.css'
 
 const Layout = ({ children }) => (
-  <div>
+  <div
+    style={{
+      height: `100vh`,
+      display: `flex`,
+    }}
+  >
     {/* <Header /> */}
     <div
       style={{
         margin: `0 auto`,
-        maxWidth: 960,
+        maxWidth: 600,
         padding: `0px 1.0875rem 1.45rem`,
         paddingTop: 0,
+        display: `flex`,
+        flexDirection: `column`,
+        textAlign: `center`,
       }}
     >
       {children}

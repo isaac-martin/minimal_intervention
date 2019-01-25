@@ -63,12 +63,14 @@ class Newsletter extends Component {
               type="text"
               name="firstName"
               placeholder="First Name"
+              className="half"
               onChange={this.onInputChange}
               value={firstName}
             />
             <input
               aria-label="Last Name"
               type="text"
+              className="half"
               name="lastName"
               placeholder="Last Name"
               onChange={this.onInputChange}
@@ -76,7 +78,11 @@ class Newsletter extends Component {
             />
             <input
               aria-label="Newsletter Form"
-              className={!validEmail && userEmail.length > 1 ? 'invalid' : ''}
+              className={
+                !validEmail && userEmail.length > 1
+                  ? 'invalid full email-input'
+                  : 'full email-input'
+              }
               type="email"
               name="userEmail"
               placeholder="email@yourcompany.com"
@@ -85,7 +91,7 @@ class Newsletter extends Component {
             />
             <button
               type="submit"
-              className={!validEmail ? 'disabled btn-blue' : 'btn-blue'}
+              className={!validEmail ? 'disabled btn full' : 'btn full'}
               disabled={!validEmail}
             >
               Subscribe

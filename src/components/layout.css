@@ -5,6 +5,8 @@ html {
 }
 body {
   margin: 0;
+  background: rgba(243,107,91,.15);
+  color: rgba(41,81,70, 1);
 }
 article,
 aside,
@@ -197,7 +199,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
+  color: rgba(41,81,70, 1);
   font-family: georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
@@ -618,3 +620,28 @@ pre tt:after {
     font-size: 100%;
   }
 }
+
+
+
+
+.newsletter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.half {
+  width: 48%;
+  margin-bottom: 15px;
+}
+
+.half:first-of-type {
+  margin-right: 4%;
+}
+
+.full {
+  width: 100%;
+  margin-bottom: 15px;
+
+}
+

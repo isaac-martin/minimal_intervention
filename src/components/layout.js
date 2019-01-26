@@ -8,6 +8,8 @@ const Layout = ({ children }) => (
     style={{
       height: `100vh`,
       display: `flex`,
+      justifyContent: `center`,
+      alignItems: `center`,
     }}
   >
     {/* <Header /> */}

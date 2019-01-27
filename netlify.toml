@@ -1,0 +1,9 @@
+[build]
+  publish = "public"
+  command = "yarn prod"
+  functions = "lambda"
+
+
+
+
+

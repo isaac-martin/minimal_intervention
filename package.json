@@ -29,7 +29,10 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
+    "prod": "yarn build; yarn build:lambda",
     "develop": "gatsby develop",
+    "build:lambda": "netlify-lambda build functions",
+    "develop:lambda": "netlify-lambda serve functions",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""

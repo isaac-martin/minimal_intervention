@@ -17,7 +17,7 @@ class Newsletter extends Component {
     e.preventDefault()
 
     try {
-      const response = await fetch('/.netlify/functions/subscribe', {
+      const response = await fetch('/.netlify/functions/newsletter', {
         method: 'post',
         body: JSON.stringify({
           email: userEmail,

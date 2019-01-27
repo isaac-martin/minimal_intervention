@@ -12,6 +12,7 @@ exports.handler = function(event, context, callback) {
 
   const parsedBody = JSON.parse(event.body)
   const email = parsedBody.email
+  const merge = parsedBody.merge
 
   const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
@@ -24,6 +25,9 @@ exports.handler = function(event, context, callback) {
 
   const body = {
     email_address: email,
+    merge_fields: {
+      ...merge,
+    },
     status: 'subscribed',
   }
 
@@ -31,7 +35,7 @@ exports.handler = function(event, context, callback) {
 
   axios({
     method: 'post',
-    url: 'https://us16.api.mailchimp.com/3.0/lists/db80615f20/members/',
+    url: 'https://us19.api.mailchimp.com/3.0/lists/db80615f20/members/',
     data: body,
     auth: {
       username,

@@ -13,7 +13,7 @@ class Newsletter extends Component {
   }
 
   onSubscribeClick = async e => {
-    const { userEmail } = this.state
+    const { userEmail, firstName, lastName } = this.state
     e.preventDefault()
 
     try {
@@ -21,6 +21,10 @@ class Newsletter extends Component {
         method: 'post',
         body: JSON.stringify({
           email: userEmail,
+          merge: {
+            FNAME: firstName,
+            LNAME: lastName,
+          },
         }),
       })
 
@@ -96,10 +100,10 @@ class Newsletter extends Component {
             >
               Subscribe
             </button>
-            {errorMsg ? <p className="text-red">{errorMsg}</p> : ''}
+            {errorMsg ? <p>{errorMsg}</p> : ''}
           </form>
         ) : (
-          <h4 className="text-blue">Thanks for subscribing!</h4>
+          <h2>Thanks for subscribing!</h2>
         )}
       </Fragment>
     )

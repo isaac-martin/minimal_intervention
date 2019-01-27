@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Minimal Intervention`,
-    description: `Sign up for infomration`,
+    description: `Sign up for information`,
     author: `isaac-martin`,
   },
   proxy: {

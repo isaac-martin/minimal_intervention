@@ -27,11 +27,11 @@ exports.handler = function(event, context, callback) {
     status: 'subscribed',
   }
 
-  const username = 'pairity'
+  const username = 'minimal intervention'
 
   axios({
     method: 'post',
-    url: 'https://us16.api.mailchimp.com/3.0/lists/04626a0e95/members/',
+    url: 'https://us16.api.mailchimp.com/3.0/lists/db80615f20/members/',
     data: body,
     auth: {
       username,

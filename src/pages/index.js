@@ -8,9 +8,9 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <h1 className="logo">Minimal Intervention</h1>
+  <h3>Hi, we're Minimal Intervention</h3>
     <p className="intro">
-      Hi, we’re Minimal Intervention. We source handcrafted products from across
-      the world for you to share with your friends.
+    We source small batch, handcrafted and exciting wine from Australia and around the world.  
     </p>
     <p className="news-intro">
       Sign up below for exclusive deals, coupons and news for when we are open

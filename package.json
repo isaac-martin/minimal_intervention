@@ -15,6 +15,8 @@
     "gatsby-plugin-offline": "^2.0.16",
     "gatsby-plugin-react-helmet": "^3.0.2",
     "gatsby-plugin-sharp": "^2.0.14",
+    "gatsby-plugin-tslint": "^0.0.2",
+    "gatsby-plugin-typescript": "^2.0.11",
     "gatsby-source-contentful": "^2.0.29",
     "gatsby-source-filesystem": "^2.0.8",
     "gatsby-source-shopify": "^2.0.13",
@@ -24,7 +26,8 @@
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "react-relay": "^3.0.0"
   },
   "keywords": [
     "gatsby"
@@ -38,10 +41,22 @@
     "develop:lambda": "netlify-lambda serve functions",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "type-check": "tsc --noEmit",
+    "lint": "tslint --project ."
   },
   "devDependencies": {
-    "prettier": "^1.15.2"
+    "@types/react": "^16.8.8",
+    "@types/react-dom": "^16.8.2",
+    "babel-plugin-relay": "^3.0.0",
+    "prettier": "^1.15.2",
+    "relay-compiler": "^3.0.0",
+    "tslint": "^5.14.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-loader": "^3.5.4",
+    "tslint-plugin-prettier": "^2.0.1",
+    "tslint-react": "^3.6.0",
+    "typescript": "^3.3.3333"
   },
   "repository": {
     "type": "git",

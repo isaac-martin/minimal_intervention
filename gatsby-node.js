@@ -4,6 +4,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   const productTemplate = path.resolve('./src/templates/product.js')
   const blogTemplate = path.resolve('./src/templates/BlogPost.js')
+  const collectionTemplate = path.resolve('./src/templates/collection.js')
 
   const products = graphql(`
     {
@@ -42,6 +43,47 @@ exports.createPages = ({ graphql, actions }) => {
           images: edge.node.images,
           shopifyId: edge.node.shopifyId,
           price: edge.node.variants[0].price,
+        },
+      })
+    })
+  })
+
+  const collections = graphql(`
+    {
+      allShopifyCollection {
+        edges {
+          node {
+            title
+            handle
+            descriptionHtml
+            handle
+            products {
+              title
+              handle
+              images {
+                id
+              }
+              variants {
+                price
+              }
+            }
+          }
+        }
+      }
+    }
+  `).then(result => {
+    if (result.errors) {
+      Promise.reject(result.errors)
+    }
+    result.data.allShopifyCollection.edges.forEach(edge => {
+      createPage({
+        path: `/collections/${edge.node.handle}`,
+        component: collectionTemplate,
+        context: {
+          id: edge.node.id,
+          title: edge.node.title,
+          description: edge.node.descriptionHtml,
+          products: edge.node.products,
         },
       })
     })
@@ -92,5 +134,5 @@ exports.createPages = ({ graphql, actions }) => {
     })
   })
 
-  return Promise.all([posts, products])
+  return Promise.all([posts, products, collections])
 }

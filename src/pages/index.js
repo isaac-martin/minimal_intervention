@@ -5,7 +5,7 @@ import Newsletter from '../components/newsletter'
 import SEO from '../components/seo'
 
 const IndexPage = () => (
-  <Layout>
+  <Layout className="indexPage">
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <h1 className="logo">Minimal Intervention</h1>
   <h3>Hi, we're Minimal Intervention</h3>

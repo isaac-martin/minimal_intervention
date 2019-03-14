@@ -1,59 +1,29 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
+import getProducts from '../fetch/products'
 import { QuizContext } from '../store/productStore'
 
-function Results() {
-  const [results, setResults] = useState({ results: [] })
+const Results = () => {
+  const { state, dispatch } = useContext(QuizContext)
 
-  const wine = 'Red'
-  useEffect(async () => {
-    const res = fetch(
-      'https://minimal-intervention.myshopify.com/api/graphql',
+  async function fetchResults() {
+    const result = await getProducts(state.wine, 5)
+    dispatch({ type: 'GET_RESULTS', results: result })
+  }
+
+  useEffect(() => {
+    fetchResults()
+  }, [])
+
+  return (
+    <div>
       {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Shopify-Storefront-Access-Token':
-            '75f418447dd5becdedfd806092ea0145',
-        },
-        body: JSON.stringify({
-          query: `query{
-    products(first: 100 query:"product_type:'${wine}'") {
-      edges {
-        node {
-          productType
-          id
-          title
-          handle
-          descriptionHtml
-          description
-          images(first: 1) {
-            edges {
-              node {
-                originalSrc
-              }
-            }
-          }
-          variants(first:1) {
-            edges {
-              node {
-                price
-              }
-            }
-          }
-        }
+        <h5>
+          Wine: {state.wine}
+          {state.results.length}
+        </h5>
       }
-    }
-  }`,
-        }),
-      }
-    )
-    const json = await res.json()
-
-    setResults(json.data.products.edges)
-  })
-
-  // const { state } = useContext(QuizContext)
-  return <div>{/* <h5>Wine: {state.wine}</h5> */}</div>
+    </div>
+  )
 }
 
 export default Results

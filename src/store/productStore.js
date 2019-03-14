@@ -1,24 +1,36 @@
-import React, { createContext, useReducer } from 'react'
+import { createContext } from 'react'
+
+const QuizContext = createContext()
+
+const ADD_WINE = 'ADD_WINE'
+const GET_RESULTS = 'GET_RESULTS'
+const LOADING = 'LOADING'
+const QUESTIONS_COMPLETE = 'QUESTIONS_COMPLETE'
+const INCREMENT = 'INCREMENT'
 
 let reducer = (state, action) => {
   switch (action.type) {
-    case 'ADD_WINE':
-      return { ...state, wine: action.payload }
+    case ADD_WINE:
+      return { ...state, wine: action.wine }
+    case GET_RESULTS:
+      return { ...state, results: action.results }
+    case LOADING:
+      return { ...state, loading: action.loading }
+    case QUESTIONS_COMPLETE:
+      return { ...state, complete: true }
+    case INCREMENT:
+      return { ...state, question: state.question + 1 }
     default:
       return
   }
 }
 
-const initialState = { wine: '' }
-const QuizContext = createContext(initialState)
-
-function QuizProvider(props) {
-  const [state, dispatch] = useReducer(reducer, initialState)
-  return (
-    <QuizContext.Provider value={(state, dispatch)}>
-      {props.children}
-    </QuizContext.Provider>
-  )
+const initialState = {
+  wine: 'Red',
+  results: [],
+  loading: true,
+  complete: false,
+  question: 1,
 }
 
-export { QuizContext, QuizProvider }
+export { initialState, reducer, QuizContext }

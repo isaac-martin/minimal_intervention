@@ -3,7 +3,7 @@
   "private": true,
   "description": "Minimal intervention Shopify",
   "version": "0.1.0",
-  "author": "Isaac Martin <mathews.kyle@gmail.com>",
+  "author": "Isaac Martin <isaac@weareplayground.co>",
   "dependencies": {
     "@emotion/core": "^10.0.6",
     "@emotion/styled": "^10.0.6",
@@ -36,10 +36,12 @@
   "scripts": {
     "build": "gatsby build",
     "prod": "yarn build; yarn build:lambda",
+    "start": "yarn develop:ssl",
+    "clean": "rimraf .cache public",
     "develop": "gatsby develop",
+    "develop:ssl": "yarn clean && gatsby develop --https",
     "build:lambda": "netlify-lambda build functions",
     "develop:lambda": "netlify-lambda serve functions",
-    "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
     "type-check": "tsc --noEmit",

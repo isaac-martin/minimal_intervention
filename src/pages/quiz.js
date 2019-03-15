@@ -4,14 +4,12 @@ import QuizUI from '../components/quiz'
 import Results from '../components/results'
 import '../styles/quiz.css'
 
-
 const Quiz = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   return (
     <QuizContext.Provider value={{ state, dispatch }}>
-      {state.question <= 2 ?  <QuizUI />:<Results />}
-
+      {state.question <= 2 ? <QuizUI /> : <Results />}
     </QuizContext.Provider>
   )
 }

@@ -5,7 +5,6 @@ const QuizContext = createContext()
 const ADD_WINE = 'ADD_WINE'
 const GET_RESULTS = 'GET_RESULTS'
 const LOADING = 'LOADING'
-const QUESTIONS_COMPLETE = 'QUESTIONS_COMPLETE'
 const INCREMENT = 'INCREMENT'
 
 let reducer = (state, action) => {
@@ -16,8 +15,6 @@ let reducer = (state, action) => {
       return { ...state, results: action.results }
     case LOADING:
       return { ...state, loading: action.loading }
-    case QUESTIONS_COMPLETE:
-      return { ...state, complete: true }
     case INCREMENT:
       return { ...state, question: state.question + 1 }
     default:

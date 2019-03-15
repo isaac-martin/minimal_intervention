@@ -1,4 +1,4 @@
-.slideWrapper {
+.slideWrapper, .results  {
   position: relative;
   display: flex;
   align-items: center;
@@ -72,9 +72,55 @@ cursor: pointer;
   border: 1px solid black;
 }
 
+.flavourSlide {
+  flex-direction: column;
+}
+
+.flavours {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.flavours span {
+  max-width: 100px;
+  text-align: center;
+}
+
+.slider {
+  width: 100%;
+}
+
 
 .next {
   background: none;
   border: none;
   margin-top: 40px;
+}
+
+.productWrap {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.results h2 {
+  text-align: center;
+}
+
+
+.productCard {
+  border: 1px solid black;
+  width: 22%;
+}
+
+.productWrap {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.text {
+  padding: 10px;
 }

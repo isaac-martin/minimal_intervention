@@ -1,0 +1,130 @@
+.slideWrapper, .results  {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background: #F1EEE5;
+}
+
+.slide {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80vw;
+}
+
+button.next {
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    border: 2px solid #018592;
+    padding: 15px 50px;
+    color: #018592;
+}
+.wineCard {
+background: none;
+border: none;
+padding: 20px 60px;
+height: 100%;
+margin-right: 30px;
+cursor: pointer;
+}
+
+.wineCard h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      color: #018592;
+      margin-top: 20px;
+
+}
+.wineCard svg {
+  width: 120px;
+}
+
+
+.Red .wine {
+  fill: red;
+}
+
+.Rose .wine {
+  fill: pink;
+}
+
+.sparkles circle {
+  fill: #F1EEE5;
+}
+
+.Sparkling .wine {
+  fill: white;
+}
+
+.Orange .wine {
+  fill: orange;
+}
+
+.White .wine {
+  fill: yellow;
+}
+
+.wineCard.active {
+  border: 1px solid black;
+}
+
+.flavourSlide {
+  flex-direction: column;
+}
+
+.flavours {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.flavours span {
+  max-width: 100px;
+  text-align: center;
+}
+
+.slider {
+  width: 100%;
+}
+
+
+.next {
+  background: none;
+  border: none;
+  margin-top: 40px;
+}
+
+.productWrap {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.results h2 {
+  text-align: center;
+}
+
+
+.productCard {
+  border: 1px solid black;
+  width: 22%;
+}
+
+img {
+  max-width: 100%;
+}
+
+.productWrap {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.text {
+  padding: 10px;
+}

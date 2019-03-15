@@ -116,6 +116,10 @@ cursor: pointer;
   width: 22%;
 }
 
+img {
+  max-width: 100%;
+}
+
 .productWrap {
   width: 80%;
   margin: 0 auto;
